@@ -440,5 +440,22 @@
       <p class="text-center">Design by EDSU ICT Team</p>
     </footer>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+      <script>
+            $(document).ready(function(){
+            //When number of ssce sittings is checked
+            $("select[name='sscesittings']").on("change", function(){
+                var ssceSittingss = $(this).val();
+                var ssce2nd = $("#SecondSitingSsce");
+                if(ssceSittingss == 1){
+                    ssce2nd.hide();
+                } else {
+                    ssce2nd.show(500);
+                }
+            })
+
+            });
+            </script>
   </body>
 </html>
