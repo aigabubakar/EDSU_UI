@@ -176,11 +176,11 @@
           </h4>
           <h4 class="font-bold border-b border-gray-200">PAGE 3/5</h4>
           <h2>How many O'level results do you have? (number of sitings)</h2>
-          <select class="mt-7">
-            <option>1</option>
-            <option>2</option>
-            </select
-          ><br />
+                          
+          <select name="sscesittings" class="mt-7">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            </select><br />
           <div class="mt-8 grid lg:grid-cols-2 gap-10">
             <!--Cards go here-->
             <!-- First SSCE DETAILS -->
@@ -193,24 +193,7 @@
                 <input type="text" class="input" /><br />
                 <label>Examination number</label>
                 <input type="text" class="input" /><br />
-              </form>
-            </div>
-            <!-- SECOND SSCE DETAILS -->
-            <div class="card hover:shadow-xl">
-                <form class="w-full p-10">
-                    <h2 class="font-bold">SECOND O'level Result</h2>
-                    <label>Type of SSCE exams *</label><br />
-                    <input type="text" class="input" /><br />
-                    <label>Year of SSCE exams </label><br />
-                    <input type="text" class="input" /><br />
-                    <label>Examination number</label>
-                    <input type="text" class="input" /><br />
-                  </form>
-            </div>
-            <!-- First SSCE SUBJECT DETAILS -->
-            <div class="card hover:shadow-xl">
-              <form class="w-full p-10">
-                <h2 class="font-bold">FIRST O'level Result</h2>
+              
                 <h2 class="text-red-500 mb-2 font-bold">
                     Awaiting Result Candidate can now apply by selecting (AR as grade)
                 </h2>
@@ -313,9 +296,18 @@
               </form>
             </div>
             <!-- First SSCE SUBJECT DETAILS -->
-            <div class="card hover:shadow-xl">
+                        
+                <!-- SECOND SSCE DETAILS -->
+            <div id="SecondSitingSsce" class="card hover:shadow-xl">
                 <form class="w-full p-10">
-                    <h2 class="font-bold">SECOND O'level Result(only if you have 2 results)</h2>
+                    <h2 class="font-bold">SECOND O'level Result</h2>
+                    <label>Type of SSCE exams *</label><br />
+                    <input type="text" class="input" /><br />
+                    <label>Year of SSCE exams </label><br />
+                    <input type="text" class="input" /><br />
+                    <label>Examination number</label>
+                    <input type="text" class="input" /><br />
+                  
                     <h2 class="text-red-500 mb-2 font-bold">
                         Awaiting Result Candidate can now apply by selecting (AR as grade)
                     </h2>
@@ -440,5 +432,22 @@
       <p class="text-center">Design by EDSU ICT Team</p>
     </footer>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+      <script>
+            $(document).ready(function(){
+            //When number of ssce sittings is checked
+            $("select[name='sscesittings']").on("change", function(){
+                var ssceSittingss = $(this).val();
+                var ssce2nd = $("#SecondSitingSsce");
+                if(ssceSittingss == 1){
+                    ssce2nd.hide();
+                } else {
+                    ssce2nd.show(500);
+                }
+            })
+
+            });
+            </script>
   </body>
 </html>
